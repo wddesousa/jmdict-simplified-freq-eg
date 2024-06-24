@@ -24,12 +24,14 @@ class JMdictConverter : Converter<JMdictXmlElement.Entry, JMdictJsonElement.Word
 
     private fun kanji(kEle: JMdictXmlElement.KEle, entSeq: String) = JMdictJsonElement.Kanji(
         common = kEle.kePri.any { commonIndicators.contains(it.text) },
+        freq = kEle.kePri.filter { it.text.startsWith("nf") }.map { it.text }, 
         text = kEle.keb.text,
         tags = kEle.keInf.map { entityToTag(it.text, entSeq) }
     )
 
     private fun kana(rEle: JMdictXmlElement.REle, entSeq: String) = JMdictJsonElement.Kana(
         common = rEle.rePri.any { commonIndicators.contains(it.text) },
+        freq = rEle.rePri.filter { it.text.startsWith("nf") }.map { it.text }, 
         text = rEle.reb.text,
         tags = rEle.reInf.map { entityToTag(it.text, entSeq) },
         appliesToKanji = when {

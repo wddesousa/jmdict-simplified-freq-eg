@@ -40,6 +40,7 @@ sealed class JMdictJsonElement : CommonJsonElement() {
     @Serializable
     data class Kanji(
         val common: Boolean,
+        val freq: List<String>,
         val text: String,
         val tags: List<Tag>,
     )
@@ -47,6 +48,7 @@ sealed class JMdictJsonElement : CommonJsonElement() {
     @Serializable
     data class Kana(
         val common: Boolean,
+        val freq: List<String>,
         val text: String,
         val tags: List<Tag>,
         val appliesToKanji: List<String>,
