@@ -1,5 +1,5 @@
 # Fork Information
-This fork simply adds the word frequency in the newspapers (denoted with the codes starting with nf, e.g. nf01, nf20, etc) to the JSON files generated from JMNedict and JMdict.
+This fork simply adds the word frequency in newspapers (denoted with the codes starting with nf, e.g. nf01, nf20, etc) to the JSON files generated from JMNedict and JMdict.
 
 # jmdict-simplified
 
